@@ -1,0 +1,321 @@
+/* =============================================
+   BEFORE AI — original stylesheet
+   This is the original CSS before AI improvements
+   ============================================= */
+
+html {
+	/* no smooth scroll */
+}
+
+body {
+	background-color: black;
+	text-align: center;
+	color: white;
+	margin: 0;
+}
+
+h1 {
+	width: 20%;
+	font-family: Maqui;
+}
+
+h2 {
+	color: white;
+	font-size: 80px;
+	padding-top: 20%;
+	margin-bottom: 0;
+	font-family: Empathy;
+	flex: 1;
+}
+
+h3 {
+	font-family: Alphazet;
+	font-size: 33px;
+	margin: 1%;
+	color: white;
+}
+
+li {
+	font-family: Alphazet;
+	font-size: 28px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: 5% center;
+	background-size: 100px 100px;
+	padding: 42px;
+}
+
+ul {
+	padding-left: 0;
+	list-style-position: inside;
+	text-align: center;
+}
+
+p {
+	margin-top: 8%;
+	font-size: 30px;
+	font-family: Alphazet;
+	color: white;
+}
+
+a {
+	color: white;
+}
+
+a:link  { color: white; }
+a:visited { color: white; }
+
+a:hover {
+	transform: scale(1.5);
+	text-shadow: 0 0 15px #82d3ff;
+}
+
+a:active {
+	color: rgba(83, 130, 138, 1);
+	transform: scale(1);
+}
+
+.skillcard:hover {
+	transform: scale(1.1);
+	box-shadow: 0 0 10px #82d3ff;
+}
+
+.project:hover {
+	transform: scale(1.1);
+	box-shadow: 0 0 10px #82d3ff;
+}
+
+/* Original topbar — no sticky, no background */
+.topbar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	color: white;
+	text-align: center;
+	width: 100%;
+	/* NOT sticky, no backdrop */
+}
+
+.page {
+	text-align: center;
+	text-decoration: none;
+	transition: transform 0.2s ease-in-out, text-shadow 0.2 ease-in-out;
+	transform-origin: bottom;
+	font-family: Cascadia;
+	flex: 1;
+}
+
+.title {
+	font-family: Alphazet;
+	font-size: 40px;
+	margin: 1%;
+	margin-left: 30%;
+	margin-right: 30%;
+	border-bottom: 1px solid white;
+	mask-image: radial-gradient(circle, black 60%, transparent 100%);
+	-webkit-mask-image: radial-gradient(circle, black 60%, transparent 100%);
+}
+
+.subtitle {
+	font-family: Alphazet;
+	font-size: 17px;
+	color: white;
+}
+
+.initals {
+	width: 20%;
+	font-family: Maqui;
+	text-decoration: none;
+	font-size: 30px;
+	padding: 1%;
+	transition: transform 0.2s ease-in-out, text-shadow 0.2 ease-in-out;
+}
+
+.circle {
+	width: 600px;
+	height: 600px;
+	min-height: 600px;
+	min-width: 600px;
+	border-radius: 50%;
+	box-shadow: 0 0 20px 10px rgba(52, 152, 219, 0.5);
+	align-self: flex-start;
+	animation: float 6s ease-in-out infinite;
+	margin-top: 0;
+	background: linear-gradient(to right, #0f97f2, #a1d9ff);
+}
+
+.circle2 {
+	width: 600px;
+	height: 600px;
+	min-height: 600px;
+	min-width: 600px;
+	border-radius: 50%;
+	align-self: flex-start;
+	animation: float2 6s ease-in-out infinite;
+	margin-top: 0;
+	background: rgba(0, 153, 255, 0);
+	position: absolute;
+	z-index: 100;
+}
+
+.background {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
+	position: fixed;
+	z-index: -100;
+	overflow: visible;
+}
+
+.bubble {
+	background: rgba(90, 90, 90, 0.15);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+	border: 1px solid rgba(90, 90, 90, 0.25);
+	border-radius: 30px;
+	padding: 2%;
+	width: clamp(400px, 60%, 800px);
+	margin: auto;
+	margin-top: 100px;
+	margin-bottom: 50px;
+}
+
+.bubble2 {
+	background: rgba(90, 90, 90, 0.15);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+	border: 1px solid rgba(90, 90, 90, 0.25);
+	border-radius: 30px;
+	padding: 2%;
+	width: clamp(400px, 60%, 800px);
+	margin: auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.skillcard {
+	background: rgba(255, 255, 255, 0.15);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+	border: 1px solid rgba(90, 90, 90, 0.25);
+	border-radius: 30px;
+	padding: 0.8%;
+	width: clamp(400px, 28%, 800px);
+	margin: 1.5%;
+	transition: transform 0.2s ease-in-out;
+}
+
+.skillcardholder {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.projectsholder {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.project {
+	background: rgba(255, 255, 255, 0.15);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+	border: 1px solid rgba(90, 90, 90, 0.25);
+	border-radius: 30px;
+	padding: 0.8%;
+	width: clamp(400px, 35%, 800px);
+	margin: 2%;
+	transition: transform 0.2s ease-in-out;
+	cursor: pointer;
+	color: white;
+}
+
+.projectimage {
+	width: 90%;
+	border-radius: 10px;
+}
+
+.projectimage2 {
+	width: 80%;
+	border-radius: 10px;
+}
+
+
+[popover]:popover-open {
+	background: rgba(10, 10, 10, 0.3);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+	border: 1px solid rgba(90, 90, 90, 0.25);
+	border-radius: 30px;
+	padding: 2%;
+	height: 70%;
+	width: 70%;
+	position: fixed;
+	inset: 0;
+	margin: auto;
+	color: white;
+	overflow-y: auto;
+}
+
+@keyframes float {
+	0%   { transform: translateY(0px);   box-shadow: 0 0 40px 15px rgba(52, 152, 219, 0.5); }
+	50%  { transform: translateY(-20px); box-shadow: 0 0 300px 20px rgba(52, 152, 219, 0.6); }
+	100% { transform: translateY(0px);   box-shadow: 0 0 40px 15px rgba(52, 152, 219, 0.5); }
+}
+
+@keyframes float2 {
+	0%   { transform: translateY(0px);   background: rgba(0, 217, 255, 0.2); }
+	50%  { transform: translateY(-20px); background: rgba(0, 217, 255, 0); }
+	100% { transform: translateY(0px);   background: rgba(0, 217, 255, 0.2); }
+}
+
+@font-face {
+	font-family: 'Maqui';
+	src: url('Maqui Hv.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Empathy';
+	src: url('High Empathy.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Cascadia';
+	src: url('CascadiaCode.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Alphazet';
+	src: url('Alphazet-Light.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* ── Before: override new structural classes to revert appearance ── */
+.home-content { display: block; text-align: center; padding: 0 24px 80px; }
+.home-eyebrow { font-family: Alphazet; font-size: 17px; color: white; letter-spacing: 0; text-transform: none; margin: 16px 0 0; }
+.home-subtitle { font-family: Alphazet; font-size: 17px; color: white; margin: 4px 0 0; }
+.bio-card { background: rgba(90,90,90,0.15); backdrop-filter: blur(10px); border: 1px solid rgba(90,90,90,0.25); border-radius: 30px; padding: 2%; width: clamp(400px,60%,800px); margin: 100px auto 50px; text-align: center; }
+.bio-card p { font-size: 30px; margin-top: 0; }
+.page-header { padding: 20px 0 0; }
+.page-title { font-family: Alphazet; font-size: 40px; margin: 1% 30%; border-bottom: 1px solid white; display: inline-block; width: 40%; }
+.page-rule { display: none; }
+.project-inner { padding: 16px; }
+.skillcard h3 { font-family: Alphazet; font-size: 33px; letter-spacing: 0; text-transform: none; color: white; }

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>(function(){var m=document.cookie.match(/(?:^|; )aiEnhanced=([^;]*)/);var v=m?decodeURIComponent(m[1]):null;if(v!==null&&v!=="true"){document.documentElement.className="original";}})();</script>
+  
+  <link id="main-stylesheet" rel="stylesheet" href="style.css">
+  <script src="ai-toggle.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caden Wright | AI</title>
+  <style>
+    .toggle-card {
+      padding: 36px 44px;
+      width: clamp(280px, 58%, 700px);
+      margin: 0 auto 24px;
+      text-align: center;
+    }
+    .toggle-eyebrow {
+      font-family: Cascadia, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--blue-light);
+      margin: 0 0 20px;
+    }
+    .toggle-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+    .toggle-side {
+      font-family: Cascadia, monospace;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.3);
+      min-width: 80px;
+      transition: color 0.25s;
+    }
+    .toggle-side.active { color: white; }
+    .toggle-side-right  { text-align: left; }
+    .toggle-side-left   { text-align: right; }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 30px;
+      flex-shrink: 0;
+    }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .slider {
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
+    }
+    .slider::before {
+      content: '';
+      position: absolute;
+      width: 20px; height: 20px;
+      left: 4px; top: 4px;
+      background: rgba(255,255,255,0.55);
+      border-radius: 50%;
+      transition: transform 0.3s cubic-bezier(.4,0,.2,1), background 0.3s;
+    }
+    input:checked + .slider {
+      background: rgba(15,151,242,0.22);
+      border-color: rgba(130,211,255,0.45);
+      box-shadow: 0 0 14px rgba(130,211,255,0.22);
+    }
+    input:checked + .slider::before {
+      transform: translateX(30px);
+      background: var(--blue-light);
+    }
+
+    .about-card {
+      padding: 36px 44px;
+      width: clamp(280px, 58%, 700px);
+      margin: 0 auto 80px;
+      text-align: left;
+    }
+
+    .ai-banner {
+      position: fixed;
+      bottom: 24px; left: 50%;
+      transform: translateX(-50%);
+      font-family: Cascadia, monospace;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      padding: 10px 24px;
+      border-radius: 30px;
+      z-index: 9999;
+      opacity: 0;
+      animation: bannerFade 2.8s forwards;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+    .banner-on {
+      background: rgba(8,32,70,0.75);
+      border: 1px solid rgba(130,211,255,0.38);
+      color: var(--blue-light);
+      box-shadow: 0 0 22px rgba(130,211,255,0.18);
+      backdrop-filter: blur(12px);
+    }
+    .banner-off {
+      background: rgba(18,18,18,0.75);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.55);
+      backdrop-filter: blur(12px);
+    }
+    @keyframes bannerFade {
+      0%   { opacity: 0; transform: translateX(-50%) translateY(8px); }
+      12%  { opacity: 1; transform: translateX(-50%) translateY(0); }
+      72%  { opacity: 1; }
+      100% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>  <div class="topbar">
+    <div class="nav-left">
+      <a href="skills.html" class="page">Skills</a>
+      <a href="projects.html" class="page">Projects</a>
+    </div>
+    <a href="index.html" class="initals">CW</a>
+    <div class="nav-right">
+      <a href="ai.html" class="page">AI</a>
+      <a href="contact.html" class="page">Contact</a>
+    </div>
+  <!-- Original mode flat nav -->
+  <a href="skills.html" class="page page-flat">Skills</a>
+  <a href="projects.html" class="page page-flat">Projects</a>
+  <a href="index.html" class="initals initals-flat">CW</a>
+  <a href="ai.html" class="page page-flat">AI</a>
+  <a href="contact.html" class="page page-flat">Contact</a>
+  </div>
+
+  <div class="bg-canvas bg-ai"></div>
+
+  <div id="ai-toggle-banner" class="ai-banner" style="display:none"></div>
+
+  <div class="page-header fade-up">
+    <h3 class="page-title">AI</h3>
+    <hr class="page-rule">
+  </div>
+
+  <div class="toggle-card fade-up fade-up-1">
+    <p class="toggle-eyebrow">AI Enhancement Mode</p>
+    <div class="toggle-row">
+      <span class="toggle-side toggle-side-left" id="label-off">Original</span>
+      <label class="switch" aria-label="Toggle AI enhancements">
+        <input type="checkbox" id="ai-toggle-switch">
+        <span class="slider"></span>
+      </label>
+      <span class="toggle-side toggle-side-right" id="label-on">AI Enhanced</span>
+    </div>
+    <p id="ai-toggle-label" style="margin-top:14px; font-family: Cascadia, monospace; font-size:11px; letter-spacing:0.08em; color: var(--blue-light);">AI Enhanced</p>
+  </div>
+
+  <div class="about-card fade-up fade-up-2">
+    <p>I use AI in many of my projects with varying degrees of impact. Some projects I only
+    use AI to help enhance certain aspects whereas in other projects I have AI build
+    many of the core systems and I just tweak and direct it as I see fit.
+    <br><br>
+	One example of how I use AI is this website. I initially made the whole thing myself using 
+	HTML and CSS. Then I passed it through AI for some improvements particularly on the design side.
+	Finally I touched up the AI's work to bring it closer to my vision. Above is a switch 
+	that you can use to see how the site was before vs after AI. Feel free to navigate to other pages 
+	and see them before AI aswell.
+	<br><br>
+    I see AI as a powerful tool for amplifying creativity best used when you understand
+    what you're building well enough to direct it precisely.</p>
+  </div>
+
+  <script>
+    function syncLabels() {
+      const on = document.getElementById('ai-toggle-switch').checked;
+      document.getElementById('label-on').classList.toggle('active', on);
+      document.getElementById('label-off').classList.toggle('active', !on);
+      const label = document.getElementById('ai-toggle-label');
+      label.textContent = on ? 'AI Enhanced' : 'Original';
+      label.style.color = on ? 'var(--blue-light)' : 'rgba(255,255,255,0.35)';
+      const banner = document.getElementById('ai-toggle-banner');
+      banner.style.display = 'block';
+      banner.textContent = on ? '✦  AI Enhancements ON' : '✦  AI Enhancements OFF';
+      banner.className = 'ai-banner ' + (on ? 'banner-on' : 'banner-off');
+      banner.style.animation = 'none';
+      banner.offsetHeight;
+      banner.style.animation = '';
+    }
+    document.getElementById('ai-toggle-switch').addEventListener('change', syncLabels);
+    document.addEventListener('DOMContentLoaded', syncLabels);
+  </script>
+</body>
+</html>
