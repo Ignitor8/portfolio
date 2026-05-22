@@ -664,6 +664,10 @@ li:last-child { border-bottom: none; }
   li { font-size: 15px; padding-left: 42px; background-size: 24px 24px; }
 
   [popover]:popover-open { width: 90%; padding: 26px 5%; }
+
+	.toggle-card, .about-card {
+		width: 90%;
+	}
 }
 
 /* ══════════════════════════════════════
