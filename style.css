@@ -842,7 +842,7 @@ html.original .initals-flat:hover {
 
 html.original .page {
   font-family: Cascadia, monospace;
-  font-size: 16px;
+  font-size: clamp(11px, 1vw, 16px);
   letter-spacing: 0;
   text-transform: none;
   padding: 18px 24px;
