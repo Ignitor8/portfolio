@@ -58,6 +58,14 @@
         <h5>Click for more info</h5>
       </div>
     </button>
+
+    <button class="project fade-up fade-up-4" popovertarget="novapopup">
+      <div class="project-inner">
+        <div class="project-placeholder-img">🕹️</div>
+        <h3>Nova Arcade</h3>
+        <h5>Click for more info</h5>
+      </div>
+    </button>
   </div>
 
   <div id="creaturepopup" popover>
@@ -84,6 +92,14 @@
     generate images of your character, interact with an AI chat to design a custom character,
     or edit any details of the auto generated characters. I put a lot of different features
     into this one so I encourage you to explore.</p>
+  </div>
+
+  <div id="novapopup" popover>
+    <button onclick="this.closest('[popover]').hidePopover()" class="popover-close">✕</button>
+    <h3>Nova Arcade</h3>
+    <h3>Play Here: <a href="https://nova-arcade.cwmaster89.workers.dev/" target="_blank">Nova Arcade</a></h3>
+    <p>Nova Arcade is an arcade-style game site that I built and deployed on Cloudflare Workers.
+    Click the link above to check it out.</p>
   </div>
 </body>
 </html>
